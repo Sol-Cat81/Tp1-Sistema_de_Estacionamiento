@@ -14,3 +14,30 @@ Reglas del negocio:
 - El auto tiene una tarifa fija de 10 dolares por hora. Si estuvo mas de 120 minutos un descuento del 10%
 - Motos Una tarifa de 5 dolares por hora. Si la cilindrada es mayor a 250 se le va a cobrar 20 dolares extras
  */
+
+using System;
+
+namespace Tp1_Sistema_de_Estacionamiento
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Estacionamiento estacionamiento = new Estacionamiento();
+
+            Auto auto1 = new Auto("ABC123", 180);
+
+            Moto moto1 = new Moto(300, "XYZ456", 120);
+
+            Moto moto2 = new Moto(150, "MNO789", 120);
+
+            estacionamiento.AgregarVehiculo(auto1);
+            estacionamiento.AgregarVehiculo(moto1);
+            estacionamiento.AgregarVehiculo(moto2);
+
+            estacionamiento.MostrarVehiculos();
+
+            Console.ReadKey();
+        }
+    }
+}
