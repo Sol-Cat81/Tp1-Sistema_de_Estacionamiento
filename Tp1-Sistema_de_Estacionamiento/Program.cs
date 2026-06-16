@@ -21,23 +21,78 @@ namespace Tp1_Sistema_de_Estacionamiento
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Estacionamiento estacionamiento = new Estacionamiento();
 
-            Auto auto1 = new Auto("ABC123", 180);
+            while (true) 
+            { 
+                Console.WriteLine("====================================");
+                Console.WriteLine("Bienvenido al sistema de estacionamiento");
+                Console.WriteLine("1_ingresar un nuevo vehiculo");
+                Console.WriteLine("2_mostrar vehiculos estacionados");
+                Console.WriteLine("3_salir");
+                Console.WriteLine("====================================");
 
-            Moto moto1 = new Moto(300, "XYZ456", 120);
+                int opcion = int.Parse(Console.ReadLine());
 
-            Moto moto2 = new Moto(150, "MNO789", 120);
+                switch (opcion) 
+                {
 
-            estacionamiento.AgregarVehiculo(auto1);
-            estacionamiento.AgregarVehiculo(moto1);
-            estacionamiento.AgregarVehiculo(moto2);
+                    case 1: Console.WriteLine("que se va a ingresar? 1_auto 2_moto");
+                        int tipoVehiculo = int.Parse(Console.ReadLine());
+                        if (tipoVehiculo == 1)
+                        {
+                            Console.WriteLine("ingrese patente");
+                            string patente = Console.ReadLine();
+                            Console.WriteLine("ingrese minutos estacionados");
+                            int minutos = int.Parse(Console.ReadLine());
+                            Auto auto1 = new Auto(patente, minutos);
+                            estacionamiento.AgregarVehiculo(auto1);
+                        }
+                        else if (tipoVehiculo == 2)
+                        {
+                            Console.WriteLine("ingrese patente");
+                            string patente = Console.ReadLine();
+                            Console.WriteLine("ingrese minutos estacionados");
+                            int minutos = int.Parse(Console.ReadLine());
+                            Console.WriteLine("ingrese cilindrada");
+                            int cilindrada = int.Parse(Console.ReadLine());
+                            Moto moto1 = new Moto(cilindrada, patente, minutos);
+                            estacionamiento.AgregarVehiculo(moto1);
+                        }
+                        else
+                        {
+                            Console.WriteLine("opcion no valida");
+                        }
+                        break; 
 
-            estacionamiento.MostrarVehiculos();
+                        case 2:
 
-            Console.ReadKey();
+                        Console.WriteLine("vehiculos estacionados:");
+                        estacionamiento.MostrarVehiculos();
+
+                        break;
+                        case 3:
+
+                        return;
+
+                }
+
+            }
+
+            //Auto auto1 = new Auto("ABC123", 180);
+
+            //Moto moto1 = new Moto(300, "XYZ456", 120);
+
+            //Moto moto2 = new Moto(150, "MNO789", 120);
+
+            //estacionamiento.AgregarVehiculo(auto1);
+            //estacionamiento.AgregarVehiculo(moto1);
+            //estacionamiento.AgregarVehiculo(moto2);
+
+            //estacionamiento.MostrarVehiculos();
+
         }
     }
 }
