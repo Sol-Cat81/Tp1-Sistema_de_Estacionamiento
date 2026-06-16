@@ -21,7 +21,7 @@ namespace Tp1_Sistema_de_Estacionamiento
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Estacionamiento estacionamiento = new Estacionamiento();
 
