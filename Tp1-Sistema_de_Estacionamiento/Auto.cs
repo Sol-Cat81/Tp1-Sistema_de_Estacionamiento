@@ -4,8 +4,7 @@ namespace Tp1_Sistema_de_Estacionamiento
 {
     internal class Auto : Vehiculo
     {
-        public Auto(string patente, double tiempoEstacionado)
-            : base(patente, tiempoEstacionado)
+        public Auto(string patente, double tiempoEstacionado) : base(patente, tiempoEstacionado)
         {
         }
 
